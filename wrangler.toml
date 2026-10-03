@@ -5,3 +5,6 @@ compatibility_date = "2024-03-20"
 binding = "DB"
 database_name = "tienda_ropa_db"
 database_id = "da9fa5bc-eb95-49b7-b667-9c2019a7afa3"
+
+[assets]
+directory = "./dist"
