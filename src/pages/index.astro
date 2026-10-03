@@ -1,0 +1,36 @@
+---
+// SSR: Obtenemos los datos directamente de D1 en el servidor
+const env = Astro.locals.runtime.env;
+const { results: products } = await env.DB.prepare('SELECT * FROM products').all();
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minimal Store</title>
+    <style>
+      body { font-family: system-ui, sans-serif; background: #f9f9f9; margin: 0; padding: 2rem; color: #333; }
+      h1 { text-align: center; margin-bottom: 2rem; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto; }
+      .card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding-bottom: 1rem; text-align: center; }
+      .card img { width: 100%; height: auto; object-fit: cover; }
+      .card h2 { margin: 1rem 0 0.5rem; font-size: 1.25rem; }
+      .card p { color: #666; font-size: 0.9rem; margin: 0 1rem; }
+      .price { font-size: 1.5rem; font-weight: bold; color: #111; margin-top: 1rem; }
+    </style>
+  </head>
+  <body>
+    <h1>Minimal Store</h1>
+    <div class="grid">
+      {products.map((product: any) => (
+        <div class="card">
+          <img src={product.image_url} alt={product.name} loading="lazy" />
+          <h2>{product.name}</h2>
+          <p>{product.description}</p>
+          <div class="price">${product.price}</div>
+        </div>
+      ))}
+    </div>
+  </body>
+</html>

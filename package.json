@@ -1,0 +1,19 @@
+{
+  "name": "tienda-ropa",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "deploy": "wrangler pages deploy ./dist",
+    "db:init": "wrangler d1 execute tienda_ropa_db --local --file=./schema.sql"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^10.0.0",
+    "astro": "^4.0.0",
+    "hono": "^4.0.0"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
