@@ -4,4 +4,4 @@ compatibility_date = "2024-03-20"
 [[d1_databases]]
 binding = "DB"
 database_name = "tienda_ropa_db"
-database_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+database_id = "da9fa5bc-eb95-49b7-b667-9c2019a7afa3"
