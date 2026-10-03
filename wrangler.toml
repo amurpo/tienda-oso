@@ -1,10 +1,13 @@
 name = "tienda-ropa"
-compatibility_date = "2024-03-20"
+main = "./dist/_worker.js/index.js"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+binding = "ASSETS"
+directory = "./dist"
 
 [[d1_databases]]
 binding = "DB"
 database_name = "tienda_ropa_db"
 database_id = "da9fa5bc-eb95-49b7-b667-9c2019a7afa3"
-
-[assets]
-directory = "./dist"
